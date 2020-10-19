@@ -24,10 +24,25 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class UpdateProductStockData implements ObserverInterface
 {
-    private GetStockItemConfigurationInterface $getStockItemConfiguration;
-    private GetProductSalableQtyInterface $productSalableQty;
-    private StockResolverInterface $stockResolver;
-    private StoreManagerInterface $storeManager;
+    /**
+     * @var GetStockItemConfigurationInterface
+     */
+    private $getStockItemConfiguration;
+
+    /**
+     * @var GetProductSalableQtyInterface
+     */
+    private $productSalableQty;
+
+    /**
+     * @var StockResolverInterface
+     */
+    private $stockResolver;
+
+    /**
+     * @var StoreManagerInterface
+     */
+    private $storeManager;
 
     /**
      * UpdateProductStockData constructor.

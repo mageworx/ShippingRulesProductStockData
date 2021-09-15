@@ -89,8 +89,8 @@ class UpdateProductStockData implements ObserverInterface
 
         $stock   = $this->stockResolver->execute(SalesChannelInterface::TYPE_WEBSITE, $websiteCode);
         $stockId = $stock->getStockId();
-        $stockItemActual = $this->getStockItemConfiguration->execute($product->getSku(), $stockId);
-        $salableQty = $this->productSalableQty->execute($product->getSku(), $stockId);
+        $stockItemActual = $this->getStockItemConfiguration->execute($product->getData('sku'), $stockId);
+        $salableQty = $this->productSalableQty->execute($product->getData('sku'), $stockId);
 
         /** @var \Magento\CatalogInventory\Model\Stock\Item $stockItem */
         $stockItem = $product->getExtensionAttributes()->getStockItem();
